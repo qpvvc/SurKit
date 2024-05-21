@@ -23,13 +23,12 @@ y = np.sin(x)
 input = {"x": x}
 target = {"y": y}
 output = ["y"]
-max_iteration = 3000
+max_iteration = 10000
 save_path = 'model/bayesian.pth'
 samples = 8
 
 net = bayes_nn.BayesNN(layers, activation, in_d=1, out_d=1, noise_tol=.1, prior_mean=0., prior_var=1.)
-# import surkit.backend as bkd
-# net = bkd.load('model/bayesian.pth')
+net = bkd.load('model/bayesian.pth')
 
 train_bayesian(input=input, output=output, target=target, net=net, iterations=max_iteration,
     optimizer=optimizer, lr=lr, path=save_path, report_interval=1000, samples=samples)
