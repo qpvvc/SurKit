@@ -30,7 +30,7 @@ elif bkd.backend_name == 'oneflow':
     from oneflow.utils.data import Dataset, DataLoader
 
 import h5py
-data_path = "./dataset/2D_CFD_Rand_M0.1_Eta0.01_Zeta0.01_periodic_128_Train.hdf5"
+data_path = "../data/dataset/2D_CFD_Rand_M0.1_Eta0.01_Zeta0.01_periodic_128_Train.hdf5"
 np.random.seed(2300)
 with h5py.File(data_path, "r") as f:
 
